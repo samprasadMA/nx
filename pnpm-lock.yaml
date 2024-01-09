@@ -461,9 +461,6 @@ devDependencies:
   '@types/yarnpkg__lockfile':
     specifier: ^1.1.5
     version: 1.1.5
-  '@types/zeromq':
-    specifier: '5'
-    version: 5.2.5
   '@typescript-eslint/eslint-plugin':
     specifier: 6.10.0
     version: 6.10.0(@typescript-eslint/parser@6.10.0)(eslint@8.48.0)(typescript@5.2.2)
@@ -965,9 +962,6 @@ devDependencies:
   yargs-parser:
     specifier: 21.1.1
     version: 21.1.1
-  zeromq:
-    specifier: ^5.2.0
-    version: 5.3.1
 
 packages:
 
@@ -10980,12 +10974,6 @@ packages:
       '@types/node': 18.16.9
     dev: true
     optional: true
-
-  /@types/zeromq@5.2.5:
-    resolution: {integrity: sha512-P66hCBoDlMAEu6yTFK03s/JZVQvau+I3ZF3GaA5RMqy9kmNMrigGhcgD+YG9MBvMBuT4FfdgEkEFaunVaN5TFQ==}
-    dependencies:
-      '@types/node': 18.16.9
-    dev: true
 
   /@typescript-eslint/eslint-plugin@6.10.0(@typescript-eslint/parser@6.10.0)(eslint@8.48.0)(typescript@5.2.2):
     resolution: {integrity: sha512-uoLj4g2OTL8rfUQVx2AFO1hp/zja1wABJq77P6IclQs6I/m9GLrm7jCdgzZkvWdDCQf1uEvoa8s8CupsgWQgVg==}
@@ -21031,10 +21019,6 @@ packages:
       thenify-all: 1.6.0
     dev: false
 
-  /nan@2.17.0:
-    resolution: {integrity: sha512-2ZTgtl0nJsO0KQCjEpxcIr5D+Yv90plTitZt9JBfQvVJDS5seMl3FOvsh3+9CoYWXf/1l5OaZzzF6nDm4cagaQ==}
-    dev: true
-
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -28616,15 +28600,6 @@ packages:
   /yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
-
-  /zeromq@5.3.1:
-    resolution: {integrity: sha512-4WDF9bNWWXe8OAI319bVw5dmG4BklEk8wzFGwRQxEzKb+0mgDU5J/jtyZPo0BEusVIU1+3mRQIEdT5LtQn+aAw==}
-    engines: {node: '>=6.0'}
-    requiresBuild: true
-    dependencies:
-      nan: 2.17.0
-      node-gyp-build: 4.5.0
-    dev: true
 
   /zone.js@0.14.0:
     resolution: {integrity: sha512-Sz0G0TjMuyApIcuTJeK742+xLLKEPjYtkdBEazBlYePHkICVp9DPKqI/4dJt3LCtQBd52sCxz23uAFJ2OJa6Ow==}
