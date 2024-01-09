@@ -116,7 +116,8 @@ async function runInParallel(
       options.readyWhen,
       options.color,
       calculateCwd(options.cwd, context),
-      options.env ?? {}
+      options.env ?? {},
+      true
     ).then((result) => ({
       result,
       command: c.command,
@@ -182,7 +183,8 @@ async function runSerially(
       undefined,
       options.color,
       calculateCwd(options.cwd, context),
-      options.env ?? {}
+      options.env ?? {},
+      false
     );
     if (!success) {
       process.stderr.write(
@@ -205,10 +207,16 @@ async function createProcess(
   readyWhen: string,
   color: boolean,
   cwd: string,
-  env: Record<string, string>
+  env: Record<string, string>,
+  isParallel: boolean
 ): Promise<boolean> {
   env = processEnv(color, cwd, env);
-  if (process.env.NX_NATIVE_COMMAND_RUNNER == 'true') {
+  // The rust runCommand is always a tty, so it will not look nice in parallel and if we need prefixes
+  if (
+    process.env.NX_NATIVE_COMMAND_RUNNER !== 'false' &&
+    !commandConfig.prefix &&
+    !isParallel
+  ) {
     const cp = runCommand(commandConfig.command, cwd, env);
 
     return new Promise((res) => {
